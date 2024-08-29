@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-export default function Connexion() {
+function Connexion() {
     return (
         <div className="container">
             <div className="firstElement">
                 <div className="content">
                     <div className="logo">
-                        <img src="./images/logo.png" alt="logo" width="226"/>
+                        <img src="./images/logo.png" alt="logo" width="326"/>
                     </div>
                     <h1>Vos outils d’expertise <br />en statistiques</h1>
                     <div className="bg-image">
@@ -29,12 +30,16 @@ export default function Connexion() {
                                 <label className="inputmotdepasse">Mot de passe</label>
                                 <input type="password" />
                             </div>
-                            <button>Se connecter</button>
+                            <Link to={"/"}>
+                                <button>Se connecter</button>
+                            </Link>
                         </form>
                     </div>
-                    <h3>Mot de passe oublié? / S’inscrire</h3>
+                    <p>Mot de passe oublié? / S’inscrire</p>
                 </div>
             </div>
         </div>
     );
 }
+
+export default Connexion;

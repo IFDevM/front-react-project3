@@ -42,13 +42,6 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Texte */
-h1 {
-    color: white;
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-
 /* Image de fond */
 .bg-image img {
     max-width: 100%;

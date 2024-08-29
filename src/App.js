@@ -1,16 +1,11 @@
-
-import './App.css';
-import Connexion from './connexion';
-
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import routes from './routes/PublicRouter'; // Assurez-vous que le chemin est correct
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Connexion/>
-      </header>
-    </div>
-  );
+    return (
+      <RouterProvider router={routes} />
+    );
 }
 
 export default App;
