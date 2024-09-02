@@ -1,13 +1,13 @@
 
 import './App.css';
-import Connexion from './connexion';
+import Login from '../src/pages/Auth/Login';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Connexion/>
+        <Login/>
       </header>
     </div>
   );
