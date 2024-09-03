@@ -1,6 +1,5 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Connexion from "../pages/connexion/Connexion";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Pivot from "../pages/pivot/Pivot";
 import MainLayout from "../pages/MainLayout";
@@ -8,18 +7,20 @@ import Histogram from "../pages/histogram/Histogram";
 import GraphDot from "../pages/graphdot/GraphDot";
 import LinePlot from "../pages/lineplot/LinePlot";
 import LineCurvy from "../pages/linecurvy/LineCurvy";
+import Login from "../pages/login/Login.jsx";
+import SignUp from "../pages/signup/SignUp.jsx";
 
 // Création des routes avec createBrowserRouter
 const routes = createBrowserRouter([
     // Route pour l'inscription
     {
         path: "/signup",  // Chemin de l'URL "/signup"
-        element: <Connexion />  // Affiche le composant Connexion pour l'inscription
+        element: <SignUp/>  // Affiche le composant Connexion pour l'inscription
     },
     // Route pour la connexion
     {
         path: "/login",  // Chemin de l'URL "/login"
-        element: <Connexion />  // Affiche le composant Connexion pour la connexion
+        element: <Login/>  // Affiche le composant Connexion pour la connexion
     },
     // Routes pour les utilisateurs
     {

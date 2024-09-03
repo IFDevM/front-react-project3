@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Auth/Login.css';
+import './Login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ const Login = () => {
                         <div className="logo">
                             <img src="./images/logo.png" alt="logo" width="80" />
                         </div>
-                        <h1>Vos outils d’expertise <br />en statistiques</h1>
+                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
                     </div>
                     <div className="bg-imageDesktopOff">
                         <img src="./images/background_x2_desktopOff.png" alt="background" width="400" />
@@ -52,7 +52,7 @@ const Login = () => {
                         <div className="logoDesktopOff">
                             <img src="./images/logo.png" alt="logo" width="80" />
                         </div>
-                        <h1>Vos outils d’expertise <br />en statistiques</h1>
+                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
                     </div>
               
                     <div className="box-content">

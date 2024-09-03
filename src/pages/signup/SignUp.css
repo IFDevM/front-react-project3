@@ -1,0 +1,211 @@
+/* Conteneur principal pour Desktop */
+.containerDesktopOff {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+
+.firstElement {
+    background-color: #0B4678;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.bg-imageDesktopOff img {
+    padding-top: 90px;
+}
+
+.secondElement {
+    background-color: #1976D2;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 54px;
+}
+
+.global-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 25px;
+    text-align: left;
+    color: #0B4678;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.btn-connect {
+    font-size: 15px;
+    font-family: "Black Han Sans", sans-serif;
+    width: auto;
+    background-color: #1a76d2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in;
+    padding: 10px 20px;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.btn-connect:hover {
+    background-color: #82878a;
+}
+
+h1 {
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
+
+h3 {
+    color: white;
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.logo {
+    padding-bottom: 80px;
+}
+
+/* Pour les écrans de bureau */
+.MobileOff {
+    display: none; 
+}
+
+/* Pour les écrans mobiles */
+@media (max-width: 794px) {
+    .containerDesktopOff {
+        display: none; 
+    }
+
+    .MobileOff {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #1976D2; 
+        position: relative; /* Nécessaire pour centrer les éléments absolus */
+    }
+
+    .box-Element {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .box-content {
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    
+        box-sizing: border-box;
+    }
+
+    .box-form {
+        background-color: white;
+        padding: 20px 30px; /* Ajustez le padding si nécessaire */
+        border-radius: 54px;
+     
+        max-width: 400px; /* Limite la largeur pour les petits écrans */
+    }
+
+    .box-global-form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .box-form-group {
+        width: 100%;
+        margin-top: 15px; /* Réduit l'espace entre les éléments */
+        text-align: left;
+        color: #0B4678;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    .btn-connect {
+        font-size: 15px;
+        font-family: "Black Han Sans", sans-serif;
+        width: auto;
+        background-color: #1a76d2;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .2s ease-in;
+        padding: 10px 20px;
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .btn-connect:hover {
+        background-color: #82878a;
+    }
+
+    h1 {
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+
+    h3 {
+        color: white;
+        margin-top: 20px;
+        font-size: 12px;
+        font-family: sans-serif;
+    }
+
+    .bg-imageMobileOff {
+        display: block;
+        width: 100%;
+        max-width: 400px; 
+        margin: 0 auto; 
+        position: absolute;
+        bottom: 20px; 
+        left: 0; 
+        right: 0; 
+        padding-top:20px;
+    }
+}
