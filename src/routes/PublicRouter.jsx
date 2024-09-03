@@ -4,6 +4,10 @@ import Connexion from "../pages/connexion/Connexion";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Pivot from "../pages/pivot/Pivot";
 import MainLayout from "../pages/MainLayout";
+import Histogram from "../pages/histogram/Histogram";
+import GraphDot from "../pages/graphdot/GraphDot";
+import LinePlot from "../pages/lineplot/LinePlot";
+import LineCurvy from "../pages/linecurvy/LineCurvy";
 
 // Création des routes avec createBrowserRouter
 const routes = createBrowserRouter([
@@ -31,6 +35,26 @@ const routes = createBrowserRouter([
             {
                 path: "pivot",  // Chemin de l'URL pour la page pivot "/pivot"
                 element: <Pivot />  // Affiche le composant Pivot lorsque l'URL correspond à "/pivot"
+            },
+            // Route pour afficher la page Pivot
+            {
+                path: "histogram",  // Chemin de l'URL pour la page pivot "/pivot"
+                element: <Histogram/>  // Affiche le composant Pivot lorsque l'URL correspond à "/pivot"
+            },
+            // Route pour afficher la page Pivot
+            {
+                path: "graphdot",  // Chemin de l'URL pour la page pivot "/pivot"
+                element: <GraphDot/>  // Affiche le composant Pivot lorsque l'URL correspond à "/pivot"
+            },
+            // Route pour afficher la page Pivot
+            {
+                path: "lineplot",  // Chemin de l'URL pour la page pivot "/pivot"
+                element: <LinePlot/>  // Affiche le composant Pivot lorsque l'URL correspond à "/pivot"
+            },
+            // Route pour afficher la page Pivot
+            {
+                path: "linecurvy",  // Chemin de l'URL pour la page pivot "/pivot"
+                element: <LineCurvy/>  // Affiche le composant Pivot lorsque l'URL correspond à "/pivot"
             }
         ]
     }
