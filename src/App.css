@@ -1,0 +1,151 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; 
+    flex-wrap: nowrap; 
+}
+
+/* Centrage des éléments dans le premier bloc */
+.firstElement {
+    background-color: #0B4678;
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Centrage du contenu */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Texte */
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Image de fond */
+.bg-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Centrage des éléments dans le second bloc */
+.secondElement {
+    background-color: #1976D2;
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+/* Centrage du contenu dans secondElement */
+.form {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 240px;
+    text-align: center;
+}
+
+/* Formulaire */
+.global-form {
+    flex-direction: column;
+    max-width: 220px;
+    
+}
+
+.form-group {
+    margin-top: 20px;
+  text-align: left;
+  
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color:#1a76d2 ;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+button:hover {
+    background-color: #82878a;
+}
+
+/* Texte sous le formulaire */
+h3 {
+    color: white;
+    margin-top: 20px;
+}
+
+/* Media Queries pour petits écrans */
+@media (max-width: 640px) {
+    .container {
+        flex-direction: column; /* Empile les éléments verticalement sur petits écrans */
+    }
+
+    .firstElement, .secondElement {
+        width: 100%; /* Prend toute la largeur sur petits écrans */
+        max-width: 100%; /* S'assure qu'il ne dépasse pas la largeur de l'écran */
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 18px; /* Réduit la taille du texte pour les petits écrans */
+    }
+
+   
+}
+@media (mmin-width: 200px) {
+    .firstElement{
+        visibility: visible;
+    }
+    
+
+ .secondElement{
+    visibility: hidden;
+ }
+
+}
+
