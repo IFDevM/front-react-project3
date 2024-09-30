@@ -1,4 +1,5 @@
 import React from 'react';
+import Pivot from '../../components/Pivot/Pivot';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -7,24 +8,8 @@ function Dashboard() {
     return (
         <div className='head-dashboard'>
             
-            <h1>Tableau de bord </h1>
-            
+            <Pivot/>
 
-            <h2>Les indicateurs clés</h2>
-
-            <div className='key-numbers'>
-
-                <div className='block-dashboard'>
-                    <h3>Nombres de Femmes</h3>
-                    <p>25087</p>
-                </div>
-
-                <div className='block-right-dashboard'>
-                    <h3>Nombres d'hommes</h3>
-                    <p>25087</p>
-                </div>
-
-            </div>
 
             <div className='key-numbers-l2'>
                 <h2>Classement des villes avec le plus de naissances</h2>

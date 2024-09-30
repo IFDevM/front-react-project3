@@ -1,0 +1,87 @@
+.pivot-container {
+    width: 50%;
+    height: 70vh;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.selectedData{
+    background-color: #cccccc;
+}
+
+.model {
+    width: 50%;
+    height: 70vh;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 2rem;
+    margin: -2rem;
+}
+
+.piechart-container , .model {
+    width: 50%;
+    height: 70vh;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+  .pivot-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .pivot-table th,
+  .pivot-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .pivot-table th {
+    background-color: #f4f4f4;
+  }
+
+  .pivot-table tr:hover{
+    background-color: #cccccc;
+    transition: .3s;
+  }
+  
+  .filter-section {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .filter-section input {
+    padding: 0.5rem;
+  }
+  
+  .pagination {
+    margin-top: 1rem;
+  }
+  
+  .pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #cccccc;
+  }
+  
