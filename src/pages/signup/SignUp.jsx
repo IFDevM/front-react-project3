@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 
-const Login = () => {
+const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -17,19 +17,27 @@ const Login = () => {
                 <div className="firstElement">
                     <div className="content">
                         <div className="logo">
-                            <img src="./images/logo.png" alt="logo" width="80" />
+                            <img src="./images/logo.png" alt="logo" width="190" />
                         </div>
-                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
+                        <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
                     <div className="bg-imageDesktopOff">
                         <img src="./images/background_x2_desktopOff.png" alt="background" width="400" />
                     </div>
                 </div>
-                <div className="secondElement">
+                <div className="secondElementSignUp">
                     <div className="content">
                         <div className="form">
-                            <h2>S'inscrire</h2>
+                            <h2 className="titleSignUp">SIGN UP</h2>
                             <form className="global-form" onSubmit={onSubmit}>
+                            <div className="box-form-group">
+                                    <label className="labelNomPrenom" htmlFor="nom">Nom</label>
+                                    <input type="nom"  />
+                                </div>
+                                <div className="box-form-group">
+                                    <label className="labelNomPrenom" htmlFor="prenom">prenom</label>
+                                    <input type="prebom"  />
+                                </div>
                                 <div className="form-group">
                                     <label htmlFor="email">E-mail</label>
                                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
@@ -41,7 +49,7 @@ const Login = () => {
                                 <button className="btn-connect">Se connecter</button>
                             </form>
                         </div>
-                        <h3>Mot de passe oublié? / S’inscrire</h3>
+                      
                     </div>
                 </div>
             </div>
@@ -50,15 +58,23 @@ const Login = () => {
                 <div className="box-Element">
                     <div className="box-content">
                         <div className="logoDesktopOff">
-                            <img src="./images/logo.png" alt="logo" width="80" />
+                            <img src="./images/logo.png" alt="logo" width="150" />
                         </div>
-                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
+                        <h1 >Vos outils d’expertise <br />en statistiques</h1>
                     </div>
-              
+
                     <div className="box-content">
                         <div className="box-form">
-                            <h2>S'inscrire</h2>
+                            <h2 titleSignUp>SIGN UP</h2>
                             <form className="box-global-form" onSubmit={onSubmit}>
+                                <div className="box-form-group">
+                                    <label htmlFor="nom">Nom</label>
+                                    <input type="nom" />
+                                </div>
+                                <div className="box-form-group">
+                                    <label htmlFor="prenom">prenom</label>
+                                    <input type="prebom"  />
+                                </div>
                                 <div className="box-form-group">
                                     <label htmlFor="email">E-mail</label>
                                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
@@ -70,15 +86,14 @@ const Login = () => {
                                 <button className="btn-connect">Se connecter</button>
                             </form>
                         </div>
-                        <h3>Mot de passe oublié? / S’inscrire</h3>
+                        
                     </div>
                 </div>
                 <div className="bg-imageMobileOff">
-                    <img src="./images/background_x2_mobileOff.png" alt="background" width="400" />
+                    <img src="./images/background_x2_mobileOff.png" alt="background" width="300" />
                 </div>
             </div>
         </>
     );
 }
-
-export default Login;
+export default SignUp;

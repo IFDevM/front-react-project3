@@ -1,3 +1,10 @@
+
+html,
+body {
+    font-family: "Titillium Web", sans-serif;
+}
+
+
 /* Conteneur principal pour Desktop */
 .containerDesktopOff {
     display: flex;
@@ -18,17 +25,13 @@
     box-sizing: border-box;
 }
 
-.bg-imageDesktopOff img {
-    padding-top: 90px;
-}
 
-.secondElement {
+.secondElementSignUp {
     background-color: #1976D2;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -36,7 +39,7 @@
 .form {
     background-color: white;
     padding: 20px 40px;
-    border-radius: 54px;
+    border-radius: 40px;
 }
 
 .global-form {
@@ -61,18 +64,18 @@ input {
     box-sizing: border-box;
 }
 
+
 .btn-connect {
     font-size: 15px;
-    font-family: "Black Han Sans", sans-serif;
     width: auto;
     background-color: #1a76d2;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     transition: .2s ease-in;
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 12px 15px;
+    margin: 50px 0px  35px 0px;
     align-self: center;
 }
 
@@ -80,20 +83,23 @@ input {
     background-color: #82878a;
 }
 
+
 h1 {
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    color: #ffffff !important;
+ 
 }
 
 h3 {
     color: white;
     margin-top: 20px;
     font-size: 12px;
-    font-family: sans-serif;
+   
 }
 
-.logo {
-    padding-bottom: 80px;
+.titleSignUp{
+    text-align: center !important;
 }
 
 /* Pour les écrans de bureau */
@@ -102,7 +108,8 @@ h3 {
 }
 
 /* Pour les écrans mobiles */
-@media (max-width: 794px) {
+@media (max-width: 640px) {
+   
     .containerDesktopOff {
         display: none; 
     }
@@ -111,7 +118,6 @@ h3 {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
         background-color: #1976D2; 
         position: relative; /* Nécessaire pour centrer les éléments absolus */
     }
@@ -124,15 +130,14 @@ h3 {
         text-align: center;
         padding: 20px;
         box-sizing: border-box;
+
     }
 
     .box-content {
-    
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-    
         box-sizing: border-box;
     }
 
@@ -140,7 +145,6 @@ h3 {
         background-color: white;
         padding: 20px 30px; /* Ajustez le padding si nécessaire */
         border-radius: 54px;
-     
         max-width: 400px; /* Limite la largeur pour les petits écrans */
     }
 
@@ -168,7 +172,7 @@ h3 {
 
     .btn-connect {
         font-size: 15px;
-        font-family: "Black Han Sans", sans-serif;
+  
         width: auto;
         background-color: #1a76d2;
         color: white;
@@ -176,8 +180,8 @@ h3 {
         border-radius: 10px;
         cursor: pointer;
         transition: .2s ease-in;
-        padding: 10px 20px;
-        margin-top: 20px;
+        padding: 12px 15px;
+        margin: 50px 0px 45px 0px;
         align-self: center;
     }
 
@@ -187,7 +191,7 @@ h3 {
 
     h1 {
         padding-bottom: 40px;
-        padding-top: 40px;
+     
     }
 
     h3 {
@@ -200,12 +204,8 @@ h3 {
     .bg-imageMobileOff {
         display: block;
         width: 100%;
-        max-width: 400px; 
+        max-width: 300px; 
         margin: 0 auto; 
-        position: absolute;
-        bottom: 20px; 
-        left: 0; 
-        right: 0; 
         padding-top:20px;
     }
 }
