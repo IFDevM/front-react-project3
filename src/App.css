@@ -137,7 +137,7 @@ h3 {
 
    
 }
-@media (mmin-width: 200px) {
+@media (min-width: 200px) {
     .firstElement{
         visibility: visible;
     }
