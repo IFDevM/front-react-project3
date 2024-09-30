@@ -17,9 +17,9 @@ const Login = () => {
                 <div className="firstElement">
                     <div className="content">
                         <div className="logo">
-                            <img src="./images/logo.png" alt="logo" width="80" />
+                            <img src="./images/logo.png" alt="logo" width="190" />
                         </div>
-                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
+                        <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
                     <div className="bg-imageDesktopOff">
                         <img src="./images/background_x2_desktopOff.png" alt="background" width="400" />
@@ -50,9 +50,9 @@ const Login = () => {
                 <div className="box-Element">
                     <div className="box-content">
                         <div className="logoDesktopOff">
-                            <img src="./images/logo.png" alt="logo" width="80" />
+                            <img src="./images/logo.png" alt="logo" width="150" />
                         </div>
-                        <h4 style={{color: "white", fontSize: "30px"}}>Vos outils d’expertise <br />en statistiques</h4>
+                        <h1 >Vos outils d’expertise <br />en statistiques</h1>
                     </div>
               
                     <div className="box-content">
@@ -74,7 +74,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="bg-imageMobileOff">
-                    <img src="./images/background_x2_mobileOff.png" alt="background" width="400" />
+                    <img src="./images/background_x2_mobileOff.png" alt="background" width="300" />
                 </div>
             </div>
         </>

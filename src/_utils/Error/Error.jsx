@@ -8,12 +8,9 @@ function Error () {
         <div className='error-message'>
 
             <h1>Error 404 !</h1>
-            <Link to='/login'>
-                <button className='btn-connect-error'>
-                    Se connecter
-                </button>
-            </Link>
-    
+            <Link to='/login'><button className='btn-connect-error'> Se connecter</button></Link>
+            
+            
         </div>
     );
 };
