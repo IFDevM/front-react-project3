@@ -6,6 +6,7 @@ import './SignUp.css';
 
 const SignUp = () => {
     const [errorMessage, setErrorMessage] = useState('');
+    const [loading, setLoading] = useState(false); // Loading state
 
     // Schéma de validation pour le formulaire de signup
     const schema = Yup.object().shape({
@@ -13,26 +14,32 @@ const SignUp = () => {
         nom: Yup.string().required("Veuillez entrer votre nom"),
         prenom: Yup.string().required("Veuillez entrer votre prénom"),
         email: Yup.string().email("Email invalide").required("Veuillez entrer votre email"),
-        password: Yup.string().required("Veuillez entrer un mot de passe").min(6, "Le mot de passe doit contenir au moins 6 caractères"),
+        clientPassword: Yup.string().required("Veuillez entrer un mot de passe").min(6, "Le mot de passe doit contenir au moins 6 caractères"),
         confirmPassword: Yup.string()
-            .oneOf([Yup.ref('password'), null], "Les mots de passe doivent correspondre")
+            .oneOf([Yup.ref('clientPassword'), null], "Les mots de passe doivent correspondre")
             .required("Veuillez confirmer votre mot de passe"),
     });
 
     // Gestionnaire de soumission du formulaire
-    const handleSubmit = async (values) => {
+    const handleSubmit = async (values, { resetForm }) => {
+        setLoading(true); // Start loading
+        setErrorMessage(''); // Clear error message before new submission
+
         try {
             const response = await axios.post('https://hathyre-server-api.onrender.com/api/add/client', {
-               civilite: values.civilite,
+                civilite: values.civilite,
                 nom: values.nom,
                 prenom: values.prenom,
                 clientEmail: values.email,
-                clientPassword: values.password,
+                clientPassword: values.clientPassword, // Corrected field name
             });
             console.log('Utilisateur inscrit', response.data);
+            resetForm(); // Optionally reset the form after successful submission
         } catch (error) {
             console.error("Erreur lors de l'inscription :", error.response?.data || error);
             setErrorMessage(error.response?.data?.message || "Erreur lors de l'inscription");
+        } finally {
+            setLoading(false); // Stop loading
         }
     };
 
@@ -57,7 +64,7 @@ const SignUp = () => {
                         <div className="form">
                             <h2 className="titleSignUp">SIGN UP</h2>
                             <Formik
-                                initialValues={{ civilite: '', nom: '', prenom: '', email: '', password: '', confirmPassword: '' }}
+                                initialValues={{ civilite: '', nom: '', prenom: '', email: '', clientPassword: '', confirmPassword: '' }}
                                 validationSchema={schema}
                                 onSubmit={handleSubmit}
                             >
@@ -65,7 +72,7 @@ const SignUp = () => {
                                     <Form className="global-form">
                                         <div className="box-form-group">
                                             <label htmlFor="civilite">Civilité</label>
-                                            <Field name="sexe" as="select" className="form-control">
+                                            <Field name="civilite" as="select" className="form-control">
                                                 <option value="" label="Sélectionnez votre civilité" />
                                                 <option value="Monsieur" label="Monsieur" />
                                                 <option value="Madame" label="Madame" />
@@ -87,17 +94,19 @@ const SignUp = () => {
                                             <Field name="email" type="email" className="form-control" />
                                             <ErrorMessage name="email" component="div" className="error" />
                                         </div>
-                                        <div className="form-group">
-                                            <label htmlFor="password">Mot de passe</label>
+                                        <div className="box-form-group">
+                                            <label htmlFor="clientPassword">Mot de passe</label>
                                             <Field name="clientPassword" type="password" className="form-control" />
-                                            <ErrorMessage name="password" component="div" className="error" />
+                                            <ErrorMessage name="clientPassword" component="div" className="error" />
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="confirmPassword">Confirmez le mot de passe</label>
                                             <Field name="confirmPassword" type="password" className="form-control" />
                                             <ErrorMessage name="confirmPassword" component="div" className="error" />
                                         </div>
-                                        <button type="submit" className="btn-connect">S'inscrire</button>
+                                        <button type="submit" className="btn-connect" disabled={loading}>
+                                            {loading ? "Chargement..." : "S'inscrire"}
+                                        </button>
                                     </Form>
                                 )}
                             </Formik>
@@ -121,7 +130,7 @@ const SignUp = () => {
                         <div className="box-form">
                             <h2 className="titleSignUp">SIGN UP</h2>
                             <Formik
-                                initialValues={{ civilite: '', nom: '', prenom: '', email: '', password: '', confirmPassword: '' }}
+                                initialValues={{ civilite: '', nom: '', prenom: '', email: '', clientPassword: '', confirmPassword: '' }}
                                 validationSchema={schema}
                                 onSubmit={handleSubmit}
                             >
@@ -152,16 +161,18 @@ const SignUp = () => {
                                             <ErrorMessage name="email" component="div" className="error" />
                                         </div>
                                         <div className="box-form-group">
-                                            <label htmlFor="password">Mot de passe</label>
-                                            <Field name="password" type="password" className="form-control" />
-                                            <ErrorMessage name="password" component="div" className="error" />
+                                            <label htmlFor="clientPassword">Mot de passe</label>
+                                            <Field name="clientPassword" type="password" className="form-control" />
+                                            <ErrorMessage name="clientPassword" component="div" className="error" />
                                         </div>
                                         <div className="box-form-group">
                                             <label htmlFor="confirmPassword">Confirmez le mot de passe</label>
                                             <Field name="confirmPassword" type="password" className="form-control" />
                                             <ErrorMessage name="confirmPassword" component="div" className="error" />
                                         </div>
-                                        <button type="submit" className="btn-connect">S'inscrire</button>
+                                        <button type="submit" className="btn-connect" disabled={loading}>
+                                            {loading ? "Chargement..." : "S'inscrire"}
+                                        </button>
                                     </Form>
                                 )}
                             </Formik>
