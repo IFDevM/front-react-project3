@@ -44,7 +44,7 @@ const Login = () => {
                 <div className="firstElement">
                     <div className="content">
                         <div className="logo">
-                            <img src="./images/logo.png" alt="logo" width="190" />
+                            <img src="./images/logo.png" alt="logo" width="90" />
                         </div>
                         <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
@@ -81,7 +81,7 @@ const Login = () => {
                             {errorMessage && <div className="error-message">{errorMessage}</div>}
                         </div>
                         <div className="text-center">
-                            <small>Mot de passe oublié?/ <Link to={"/signup"} className="text-primary">S'inscrire</Link></small>
+                            <h3>Mot de passe oublié?/ <Link to={"/signup"} className="smallText">S'inscrire</Link></h3>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const Login = () => {
                 <div className="box-Element">
                     <div className="box-content">
                         <div className="logoDesktopOff">
-                            <img src="./images/logo.png" alt="logo" width="150" />
+                            <img src="./images/logo_mobileOff.png" alt="logo" width="90" />
                         </div>
                         <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
@@ -123,7 +123,7 @@ const Login = () => {
                             </Formik>
                         </div>
                         <div className="text-center">
-                            <small>Mot de passe oublié?/ <Link to={"/signup"} className="text-primary">S'inscrire</Link></small>
+                            <h3>Mot de passe oublié?/ <Link to={"/signup"} className="smallText">S'inscrire</Link></h3>
                         </div>
                     </div>
                 </div>

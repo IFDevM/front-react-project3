@@ -50,7 +50,7 @@ const SignUp = () => {
                 <div className="firstElement">
                     <div className="content">
                         <div className="logo">
-                            <img src="./images/logo.png" alt="logo" width="190" />
+                            <img src="./images/logo.png" alt="logo" width="90" />
                         </div>
                         <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
@@ -60,8 +60,8 @@ const SignUp = () => {
                 </div>
 
                 <div className="secondElementSignUp">
-                    <div className="content">
-                        <div className="form">
+                    <div className="contentSignUp">
+                        <div className="formsignUp">
                             <h2 className="titleSignUp">SIGN UP</h2>
                             <Formik
                                 initialValues={{ civilite: '', nom: '', prenom: '', email: '', clientPassword: '', confirmPassword: '' }}
@@ -70,9 +70,9 @@ const SignUp = () => {
                             >
                                 {() => (
                                     <Form className="global-form">
-                                        <div className="box-form-group">
-                                            <label htmlFor="civilite">Civilité</label>
-                                            <Field name="civilite" as="select" className="form-control">
+                                        <div className="boxForm">
+                                            <label  htmlFor="civilite">Civilité</label>
+                                            <Field name="civilite" as="select" className="form-controlCivilite">
                                                 <option value="" label="Sélectionnez votre civilité" />
                                                 <option value="Monsieur" label="Monsieur" />
                                                 <option value="Madame" label="Madame" />
@@ -80,12 +80,12 @@ const SignUp = () => {
                                             <ErrorMessage name="civilite" component="div" className="error" />
                                         </div>
                                         <div className="box-form-group">
-                                            <label className="labelNomPrenom" htmlFor="nom">Nom</label>
+                                            <label  htmlFor="nom">Nom</label>
                                             <Field name="nom" type="text" className="form-control" />
                                             <ErrorMessage name="nom" component="div" className="error" />
                                         </div>
                                         <div className="box-form-group">
-                                            <label className="labelNomPrenom" htmlFor="prenom">Prénom</label>
+                                            <label  htmlFor="prenom">Prénom</label>
                                             <Field name="prenom" type="text" className="form-control" />
                                             <ErrorMessage name="prenom" component="div" className="error" />
                                         </div>
@@ -104,7 +104,7 @@ const SignUp = () => {
                                             <Field name="confirmPassword" type="password" className="form-control" />
                                             <ErrorMessage name="confirmPassword" component="div" className="error" />
                                         </div>
-                                        <button type="submit" className="btn-connect" disabled={loading}>
+                                        <button type="submit" className="btn-signUp" disabled={loading}>
                                             {loading ? "Chargement..." : "S'inscrire"}
                                         </button>
                                     </Form>
@@ -121,7 +121,7 @@ const SignUp = () => {
                 <div className="box-Element">
                     <div className="box-content">
                         <div className="logoDesktopOff">
-                            <img src="./images/logo.png" alt="logo" width="150" />
+                            <img src="./images/logo_mobileOff.png" alt="logo" width="90" />
                         </div>
                         <h1>Vos outils d’expertise <br />en statistiques</h1>
                     </div>
@@ -138,7 +138,7 @@ const SignUp = () => {
                                     <Form className="box-global-form">
                                         <div className="box-form-group">
                                             <label htmlFor="civilite">Civilité</label>
-                                            <Field name="civilite" as="select" className="form-control">
+                                            <Field name="civilite" as="select" className="form-controlCivilite">
                                                 <option value="" label="Sélectionnez votre civilité" />
                                                 <option value="Monsieur" label="Monsieur" />
                                                 <option value="Madame" label="Madame" />

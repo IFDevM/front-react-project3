@@ -95,13 +95,20 @@ h1 {
 h3 {
     color: white;
     margin-top: 20px;
-    font-size: 12px;
-    font-family: sans-serif;
+    font-size: 14px;
+
 }
 
 /* Pour les écrans de bureau */
 .MobileOff {
     display: none; 
+}
+
+.smallText{
+  color: white;
+    padding-top: 20px;
+    font-size: 13px;
+    text-decoration: underline;
 }
 
 /* Pour les écrans mobiles */
@@ -207,4 +214,11 @@ h3 {
         margin: 0 auto; 
         padding-top:20px;
     }
+
+    .smallText{
+        color: white;
+          padding-top: 20px;
+          font-size: 12px;
+          text-decoration: underline;
+      }
 }

@@ -13,6 +13,9 @@ body {
     flex-wrap: nowrap;
 }
 
+.contentSignUp{
+    max-width: 400px;
+}
 .firstElement {
     background-color: #0B4678;
     width: 50%;
@@ -36,9 +39,9 @@ body {
     box-sizing: border-box;
 }
 
-.form {
+.formsignUp {
     background-color: white;
-    padding: 20px 40px;
+    padding: 2px 34px;
     border-radius: 40px;
 }
 
@@ -57,15 +60,14 @@ body {
 
 input {
     width: 100%;
-    padding: 10px;
-    border: none;
+    padding: 4px;
+
     border-bottom: 1px solid black;
-    outline: none;
-    box-sizing: border-box;
+    
 }
 
 
-.btn-connect {
+.btn-signUp {
     font-size: 15px;
     width: auto;
     background-color: #1a76d2;
@@ -75,11 +77,11 @@ input {
     cursor: pointer;
     transition: .2s ease-in;
     padding: 12px 15px;
-    margin: 50px 0px  35px 0px;
+    margin: 30px 0px 30px 0px;
     align-self: center;
 }
 
-.btn-connect:hover {
+.btn-signUp:hover {
     background-color: #82878a;
 }
 
@@ -94,7 +96,7 @@ h1 {
 h3 {
     color: white;
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 13px;
    
 }
 
@@ -107,6 +109,19 @@ h3 {
     display: none; 
 }
 
+.form-controlCivilite{
+    margin-left: 20px
+}
+
+
+
+.boxForm{
+    padding-bottom: 20px;
+}
+
+.civility{
+    margin-bottom: 20px;
+    }
 /* Pour les écrans mobiles */
 @media (max-width: 640px) {
    
@@ -154,9 +169,9 @@ h3 {
         align-items: stretch;
     }
 
-    .box-form-group {
+    .box-form-group-signUp {
         width: 100%;
-        margin-top: 15px; /* Réduit l'espace entre les éléments */
+        margin-top: 20px; /* Réduit l'espace entre les éléments */
         text-align: left;
         color: #0B4678;
     }
@@ -170,7 +185,7 @@ h3 {
         box-sizing: border-box;
     }
 
-    .btn-connect {
+    .btn-signUp{
         font-size: 15px;
   
         width: auto;
@@ -185,7 +200,7 @@ h3 {
         align-self: center;
     }
 
-    .btn-connect:hover {
+    .btn-signUp:hover {
         background-color: #82878a;
     }
 
@@ -207,5 +222,16 @@ h3 {
         max-width: 300px; 
         margin: 0 auto; 
         padding-top:20px;
+    }
+    .form-controlCivilite{
+        margin-left: 20px
+    }
+    
+    .civility{
+    margin-bottom: 20px;
+    }
+    
+    .boxForm{
+        padding-bottom: 20px;
     }
 }
