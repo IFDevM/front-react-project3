@@ -1,4 +1,4 @@
-import { adminInstance, instance } from "./axiosInstance";
+import { adminInstance, instance } from "./axiosInstance.js";
 
 /**
  * Inscrit un nouvel utilisateur en envoyant une requête POST à l'API.
