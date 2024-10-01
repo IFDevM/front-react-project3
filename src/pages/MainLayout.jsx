@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
 
 /**
  * Le composant MainLayout représente la mise en page pour les pages côté Main.
