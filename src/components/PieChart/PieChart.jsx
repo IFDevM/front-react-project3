@@ -16,25 +16,20 @@ function PieChart({ selectedYearData }) {
                         data={[
                             {
                                 type: 'pie',
-                                labels: [
-                                    selectedYearData.maleName,
-                                    selectedYearData.femaleName,
-                                ],
-                                values: [
-                                    selectedYearData.maleCount,
-                                    selectedYearData.femaleCount,
-                                ],
+                                labels: selectedYearData.labels,
+                                values: selectedYearData.values,
                                 marker: {
                                     colors: COLORS,
                                 },
                                 textinfo: 'label+percent',
                                 hoverinfo: 'label+value',
+                                hole: 0.5
                             }
                         ]}
                         layout={{
                             width: 500,
                             height: 400,
-                            title: 'Répartition des prénoms',
+                            title: selectedYearData.title,
                             showlegend: true,
                             margin: { t: 40, l: 10, r: 10, b: 40 },
                         }}

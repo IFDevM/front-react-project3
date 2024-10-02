@@ -63,7 +63,7 @@ function Sidebar(props) {
                             className={`link-without-decoration li-admin ${isLinkActive("/") ? "active-link" : ""}`}
                         >
                             <span classname="icon-side-bar"><FontAwesomeIcon icon={faGauge} /></span>
-                            Tableau de bord
+                            Exploration des données
                         </Link>
                     </li>
 

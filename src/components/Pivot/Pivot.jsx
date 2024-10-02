@@ -28,10 +28,8 @@ function Pivot({ data, onRowClick, selectedYear }) {
             <thead>
             <tr>
                 <th>Année</th>
-                <th>Prénom Homme</th>
-                <th>Occurrences Homme</th>
-                <th>Prénom Femme</th>
-                <th>Occurrences Femme</th>
+                <th>Homme</th>
+                <th>Femme</th>
             </tr>
             </thead>
             <tbody>
@@ -41,24 +39,9 @@ function Pivot({ data, onRowClick, selectedYear }) {
                 className={row.year === selectedYear ? 'selectedData' : ''}
                 onClick={() => onRowClick(row.year)}
                 >
-                <td>{row.year}</td>
-                {row.gender = "M" ? 
-                                <td>{row.firstname}</td> : ""
-
-                }
-                {row.gender = "M" ? 
-                                <td>{row.nb_occur}</td> : ""
-
-                }
-                {row.gender = "F" ? 
-                                <td>{row.firstname}</td> : ""
-
-                }
-                                {row.gender = "F" ? 
-                                <td>{row.nb_occur}</td> : ""
-
-                }
-                
+                  <td>{row.year}</td>
+                  <td>{row.F}</td>
+                  <td>{row.M}</td>
                 </tr>
 
             ))}
