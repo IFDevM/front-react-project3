@@ -42,11 +42,25 @@ function Pivot({ data, onRowClick, selectedYear }) {
                 onClick={() => onRowClick(row.year)}
                 >
                 <td>{row.year}</td>
-                <td>{row.maleName}</td>
-                <td>{row.maleCount}</td>
-                <td>{row.femaleName}</td>
-                <td>{row.femaleCount}</td>
+                {row.gender = "M" ? 
+                                <td>{row.firstname}</td> : ""
+
+                }
+                {row.gender = "M" ? 
+                                <td>{row.nb_occur}</td> : ""
+
+                }
+                {row.gender = "F" ? 
+                                <td>{row.firstname}</td> : ""
+
+                }
+                                {row.gender = "F" ? 
+                                <td>{row.nb_occur}</td> : ""
+
+                }
+                
                 </tr>
+
             ))}
             </tbody>
         </table>

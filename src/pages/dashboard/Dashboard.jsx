@@ -1,30 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pivot from '../../components/Pivot/Pivot';
 import Bars from '../../components/Bars/Bars';
-import PieChart from '../../components/PieChart/PieChart'; // Import du composant PieChart
+import PieChart from '../../components/PieChart/PieChart'; 
 import './Dashboard.css';
-
-const data = [
-  { year: 2010, maleName: 'John', maleCount: 5, femaleName: 'Emily', femaleCount: 7 },
-  { year: 2011, maleName: 'Michael', maleCount: 8, femaleName: 'Sophia', femaleCount: 9 },
-  { year: 2012, maleName: 'David', maleCount: 12, femaleName: 'Emma', femaleCount: 10 },
-  { year: 2013, maleName: 'James', maleCount: 15, femaleName: 'Olivia', femaleCount: 8 },
-  { year: 2014, maleName: 'Robert', maleCount: 9, femaleName: 'Isabella', femaleCount: 7 },
-  { year: 2015, maleName: 'William', maleCount: 10, femaleName: 'Mia', femaleCount: 11 },
-  { year: 2016, maleName: 'Joseph', maleCount: 7, femaleName: 'Ava', femaleCount: 6 },
-  { year: 2017, maleName: 'Charles', maleCount: 6, femaleName: 'Lily', femaleCount: 9 },
-  { year: 2018, maleName: 'Thomas', maleCount: 8, femaleName: 'Amelia', femaleCount: 10 },
-  { year: 2019, maleName: 'Daniel', maleCount: 9, femaleName: 'Sophia', femaleCount: 12 },
-  { year: 2020, maleName: 'Matthew', maleCount: 11, femaleName: 'Harper', femaleCount: 13 },
-];
+import { getBirthsByYears } from '../../services/api/api';
 
 function Dashboard() {
-  const [selectedYearData, setSelectedYearData] = useState(null); // État pour l'année sélectionnée
+  const [years, setYears] = useState([]);  // Utilisation de 'years'
+  const [birthsByYears , setBirthsByYears] = useState(null);
+  const [error , setError] = useState('');
+  const [selectedYearData, setSelectedYearData] = useState(null);
   const [filterStartYear, setFilterStartYear] = useState('');
   const [filterEndYear, setFilterEndYear] = useState('');
 
-  // Filtrer les données par période (de A à B)
-  const filteredData = data.filter(item => {
+  useEffect(() => {
+    const execAsync = async () => {
+      try{
+        const response = await getBirthsByYears(1880, 1930);
+        setBirthsByYears(response.data);
+        console.log(birthsByYears);
+
+      }
+      catch (err) {
+        setError(err?.message)
+      }
+
+    }
+
+    execAsync()
+
+  }, []);  // Le tableau vide signifie que cela sera exécuté une seule fois, au montage
+
+  const applyFilters = () =>{
+
+  }
+
+
+  // Filtrer les données par période
+  const filteredData = years.filter(item => {
     const startYear = filterStartYear ? parseInt(filterStartYear) : null;
     const endYear = filterEndYear ? parseInt(filterEndYear) : null;
 
@@ -34,66 +47,50 @@ function Dashboard() {
     return item.year >= startYear && item.year <= endYear;
   });
 
-  // Handler pour le clic sur une ligne du tableau
   const handleRowClick = (year) => {
-    const yearData = data.find((item) => item.year === year);
+    const yearData = years.find((item) => item.year === year);
     if (yearData) {
       setSelectedYearData(yearData);
     }
   };
 
-
-
   return (
     <div className="head-dashboard">
+      <h1 style={{ color: "#1976D2" }}>Tableau de bord</h1>
 
-        <h1>Tableau de bord</h1>
+      <div className="filter-section">
+        <input
+          id="startYearFilter"
+          type="number"
+          value={filterStartYear}
+          onChange={(e) => setFilterStartYear(e.target.value)}
+          placeholder="Année de début"
+        />
+        <input
+          id="endYearFilter"
+          type="number"
+          value={filterEndYear}
+          onChange={(e) => setFilterEndYear(e.target.value)}
+          placeholder="Année de fin"
+        />
+        <button onClick={applyFilters}>Appliquer</button>
+        <button onClick={() => setSelectedYearData(null)}>Réinitialiser</button>
 
-        {/* Filtre par période */}
-        <div className="filter-section">
-            <input
-            id="startYearFilter"
-            type="number"
-            value={filterStartYear}
-            onChange={(e) => setFilterStartYear(e.target.value)}
-            placeholder="Année de début"
-            />
-            <input
-            id="endYearFilter"
-            type="number"
-            value={filterEndYear}
-            onChange={(e) => setFilterEndYear(e.target.value)}
-            placeholder="Année de fin"
-            />
-            <button onClick={() => setSelectedYearData(null)}>Réinitialiser</button>
-        </div>
+      </div>
 
-        <div style={{display: "flex", justifyContent: "space-around"}}>
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <Pivot
+          data={filteredData}
+          onRowClick={handleRowClick}
+          selectedYear={selectedYearData ? selectedYearData.year : null}
+        />
 
-            {/* Composant Pivot avec les données filtrées et la gestion du clic */}
-            <Pivot
-                data={filteredData}
-                onRowClick={handleRowClick}
-                selectedYear={selectedYearData ? selectedYearData.year : null}
-            />
+        <PieChart selectedYearData={selectedYearData} />
+      </div>
 
-            {/* Passer les données de l'année sélectionnée à PieChart */}
-            <PieChart selectedYearData={selectedYearData} />
-
-        </div>
-
-        <div style={{display: "flex", justifyContent: "center" , width:"100%" }}>
-            
-            {/* Passer les données filtrées à Bars */}
-            <Bars data={filteredData} />
-
-        </div>
-
-
-
-
-
-
+      <div style={{ display: "flex", justifyContent: "flex-start", width: "90%" }}>
+        <Bars data={filteredData} />
+      </div>
     </div>
   );
 }

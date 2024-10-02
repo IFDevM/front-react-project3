@@ -15,8 +15,10 @@
     "browserify-zlib": "^0.2.0",
     "formik": "^2.4.6",
     "https-browserify": "^1.0.0",
+    "plotly.js": "^2.35.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-plotly.js": "^2.6.0",
     "react-router": "^6.26.1",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
@@ -32,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --no-cache ."
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.57.1",
     "webpack": "^5.95.0"
   }
 }
