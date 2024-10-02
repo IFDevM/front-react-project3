@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8001/";
-console.log(BASE_URL);
 
 
 export const axiosService = axios.create({
