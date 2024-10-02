@@ -52,7 +52,7 @@ function Sidebar(props) {
             <div className={`menu-admin ${isOpen ? "open" : ""}`}>
 
                 <div className="logo">
-                    <img src="./images/logo.png" alt="logo" width="226"/>
+                    <img src="./images/logo_mobileOff.png" alt="logo" width="100"/>
                 </div>
 
                 <ul className="ul-admin">
